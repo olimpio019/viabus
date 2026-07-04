@@ -28,7 +28,7 @@ export function Header() {
         </nav>
 
         <a href="#buscar" className="btn-primary hidden text-sm sm:inline-flex">
-          Reservar passagem
+          Reservar voo
         </a>
       </div>
     </header>

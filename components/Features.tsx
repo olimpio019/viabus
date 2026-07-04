@@ -1,27 +1,29 @@
+import { siteConfig } from "@/lib/config";
+
 const features = [
   {
-    title: "Pagamento seguro",
+    title: "Somente Brasil",
     description:
-      "Finalize sua compra pelo link de pagamento integrado, com total segurança.",
-    icon: "🔒",
+      "Voos domésticos entre as principais cidades do país, sem complicação.",
+    icon: "🇧🇷",
   },
   {
     title: "Reserva rápida",
     description:
-      "Preencha origem, destino e data em segundos e vá direto para o checkout.",
+      "Informe origem, destino e data do voo em segundos e vá direto ao checkout.",
     icon: "⚡",
   },
   {
     title: "Melhor preço",
     description:
-      "Compare rotas populares e encontre a opção ideal para o seu bolso.",
+      "Compare voos populares e encontre a tarifa ideal para sua viagem nacional.",
     icon: "💰",
   },
   {
-    title: "Viagem tranquila",
+    title: "Voo tranquilo",
     description:
-      "Empresas parceiras com conforto, pontualidade e atendimento de qualidade.",
-    icon: "🚌",
+      "Companhias aéreas parceiras com conforto, pontualidade e bom atendimento.",
+    icon: "✈️",
   },
 ];
 
@@ -30,9 +32,11 @@ export function Features() {
     <section className="bg-white py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="mb-12 text-center">
-          <h2 className="text-3xl font-bold text-slate-900">Por que viajar com a ViaBus?</h2>
+          <h2 className="text-3xl font-bold text-slate-900">
+            Por que voar com a {siteConfig.name}?
+          </h2>
           <p className="mt-3 text-slate-600">
-            Tudo o que você precisa para uma viagem sem complicação.
+            Passagens aéreas nacionais com tudo o que você precisa.
           </p>
         </div>
 

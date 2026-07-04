@@ -1,14 +1,13 @@
 "use client";
 
 import { FormEvent, useState } from "react";
-import { getPaymentUrl } from "@/lib/config";
+import { BRAZILIAN_CITIES, getPaymentUrl } from "@/lib/config";
 
 export function SearchForm() {
   const [origem, setOrigem] = useState("");
   const [destino, setDestino] = useState("");
   const [data, setData] = useState("");
   const [passageiros, setPassageiros] = useState("1");
-
   const [error, setError] = useState("");
 
   const today = new Date().toISOString().split("T")[0];
@@ -18,7 +17,12 @@ export function SearchForm() {
     setError("");
 
     if (!origem.trim() || !destino.trim() || !data) {
-      setError("Preencha origem, destino e data da viagem.");
+      setError("Preencha origem, destino e data do voo.");
+      return;
+    }
+
+    if (origem.trim().toLowerCase() === destino.trim().toLowerCase()) {
+      setError("Origem e destino devem ser cidades diferentes.");
       return;
     }
 
@@ -42,22 +46,23 @@ export function SearchForm() {
       <div className="mx-auto max-w-5xl">
         <form onSubmit={handleSubmit} className="card shadow-xl shadow-slate-200/60">
           <div className="mb-6">
-            <h2 className="text-xl font-bold text-slate-900">Buscar passagem</h2>
+            <h2 className="text-xl font-bold text-slate-900">Buscar voo nacional</h2>
             <p className="mt-1 text-sm text-slate-500">
-              Preencha os dados e clique em reservar para ir ao pagamento.
+              Voos domésticos entre cidades do Brasil. Preencha e clique em reservar.
             </p>
           </div>
 
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             <div>
               <label htmlFor="origem" className="mb-2 block text-sm font-medium text-slate-700">
-                Origem
+                Cidade de origem
               </label>
               <input
                 id="origem"
                 type="text"
+                list="cidades-brasil"
                 className="input-field"
-                placeholder="De onde você sai?"
+                placeholder="Ex: São Paulo"
                 value={origem}
                 onChange={(e) => setOrigem(e.target.value)}
                 required
@@ -66,13 +71,14 @@ export function SearchForm() {
 
             <div className="relative">
               <label htmlFor="destino" className="mb-2 block text-sm font-medium text-slate-700">
-                Destino
+                Cidade de destino
               </label>
               <input
                 id="destino"
                 type="text"
+                list="cidades-brasil"
                 className="input-field"
-                placeholder="Para onde você vai?"
+                placeholder="Ex: Rio de Janeiro"
                 value={destino}
                 onChange={(e) => setDestino(e.target.value)}
                 required
@@ -89,7 +95,7 @@ export function SearchForm() {
 
             <div>
               <label htmlFor="data" className="mb-2 block text-sm font-medium text-slate-700">
-                Data da viagem
+                Data do voo
               </label>
               <input
                 id="data"
@@ -112,7 +118,7 @@ export function SearchForm() {
                 value={passageiros}
                 onChange={(e) => setPassageiros(e.target.value)}
               >
-                {[1, 2, 3, 4, 5].map((n) => (
+                {[1, 2, 3, 4, 5, 6].map((n) => (
                   <option key={n} value={String(n)}>
                     {n} {n === 1 ? "passageiro" : "passageiros"}
                   </option>
@@ -120,6 +126,12 @@ export function SearchForm() {
               </select>
             </div>
           </div>
+
+          <datalist id="cidades-brasil">
+            {BRAZILIAN_CITIES.map((city) => (
+              <option key={city} value={city} />
+            ))}
+          </datalist>
 
           <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <div>

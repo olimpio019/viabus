@@ -9,14 +9,20 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: `${siteConfig.name} | Passagens de Ônibus Online`,
+  title: `${siteConfig.name} | Passagens Aéreas Nacionais`,
   description:
-    "Compre passagens de ônibus com segurança. Compare rotas, horários e reserve sua viagem em poucos cliques.",
-  keywords: ["passagem de ônibus", "viagem", "ônibus", "rodoviária", "reserva"],
+    "Compre passagens aéreas domésticas no Brasil com segurança. Compare voos entre cidades brasileiras e reserve em poucos cliques.",
+  keywords: [
+    "passagem aérea",
+    "voo nacional",
+    "passagem avião Brasil",
+    "viagem doméstica",
+    "reserva de voo",
+  ],
   openGraph: {
-    title: `${siteConfig.name} | Passagens de Ônibus Online`,
+    title: `${siteConfig.name} | Passagens Aéreas Nacionais`,
     description:
-      "Reserve sua passagem de ônibus online com pagamento rápido e seguro.",
+      "Reserve sua passagem aérea nacional online com pagamento rápido e seguro.",
     locale: "pt_BR",
     type: "website",
   },

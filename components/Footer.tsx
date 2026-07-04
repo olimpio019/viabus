@@ -8,7 +8,8 @@ export function Footer() {
           <div>
             <p className="text-xl font-bold text-white">{siteConfig.name}</p>
             <p className="mt-2 max-w-md text-sm leading-relaxed text-slate-400">
-              Passagens de ônibus online com reserva rápida e pagamento seguro.
+              Passagens aéreas nacionais com reserva rápida e pagamento seguro.
+              Voos domésticos em todo o Brasil.
             </p>
             {siteConfig.email && (
               <a
@@ -22,10 +23,10 @@ export function Footer() {
 
           <div className="flex flex-wrap gap-6 text-sm">
             <a href="#buscar" className="transition hover:text-white">
-              Buscar passagem
+              Buscar voo
             </a>
             <a href="#rotas" className="transition hover:text-white">
-              Rotas populares
+              Voos populares
             </a>
             <a href="#faq" className="transition hover:text-white">
               FAQ

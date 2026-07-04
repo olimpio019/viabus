@@ -1,8 +1,8 @@
 const steps = [
   {
     step: "01",
-    title: "Escolha sua rota",
-    description: "Informe origem, destino, data e número de passageiros.",
+    title: "Escolha seu voo",
+    description: "Informe a cidade de origem, destino, data e número de passageiros.",
   },
   {
     step: "02",
@@ -16,8 +16,8 @@ const steps = [
   },
   {
     step: "04",
-    title: "Pronto para viajar",
-    description: "Receba a confirmação e prepare-se para a viagem.",
+    title: "Pronto para embarcar",
+    description: "Receba a confirmação e prepare-se para o seu voo nacional.",
   },
 ];
 
@@ -26,7 +26,7 @@ export function HowItWorks() {
     <section id="como-funciona" className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
       <div className="mb-12 text-center">
         <h2 className="text-3xl font-bold text-slate-900">Como funciona</h2>
-        <p className="mt-3 text-slate-600">Quatro passos simples até a sua passagem.</p>
+        <p className="mt-3 text-slate-600">Quatro passos simples até a sua passagem aérea.</p>
       </div>
 
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">

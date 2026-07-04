@@ -1,9 +1,32 @@
 export const siteConfig = {
-  name: process.env.NEXT_PUBLIC_SITE_NAME || "ViaBus",
-  tagline: process.env.NEXT_PUBLIC_SITE_TAGLINE || "Passagens online",
+  name: process.env.NEXT_PUBLIC_SITE_NAME || "ViaBrasil",
+  tagline: process.env.NEXT_PUBLIC_SITE_TAGLINE || "Passagens aéreas nacionais",
   whatsapp: process.env.NEXT_PUBLIC_WHATSAPP || "",
   email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "",
 };
+
+export const BRAZILIAN_CITIES = [
+  "São Paulo",
+  "Rio de Janeiro",
+  "Brasília",
+  "Belo Horizonte",
+  "Salvador",
+  "Recife",
+  "Fortaleza",
+  "Porto Alegre",
+  "Curitiba",
+  "Florianópolis",
+  "Manaus",
+  "Belém",
+  "Goiânia",
+  "Natal",
+  "Campinas",
+  "Vitória",
+  "Maceió",
+  "João Pessoa",
+  "Cuiabá",
+  "Porto Velho",
+] as const;
 
 export function getPaymentUrl(params?: {
   origem?: string;
@@ -34,25 +57,30 @@ export function getWhatsAppUrl(message?: string) {
   if (!phone) return "";
 
   const text = encodeURIComponent(
-    message || "Olá! Gostaria de informações sobre passagens de ônibus."
+    message || "Olá! Gostaria de informações sobre passagens aéreas nacionais."
   );
   return `https://wa.me/${phone}?text=${text}`;
 }
 
 export const POPULAR_ROUTES = [
-  { origem: "São Paulo", destino: "Rio de Janeiro", preco: "R$ 89,90", duracao: "6h" },
-  { origem: "São Paulo", destino: "Belo Horizonte", preco: "R$ 119,90", duracao: "8h" },
-  { origem: "Curitiba", destino: "Florianópolis", preco: "R$ 79,90", duracao: "4h30" },
-  { origem: "Brasília", destino: "Goiânia", preco: "R$ 59,90", duracao: "2h30" },
-  { origem: "Salvador", destino: "Recife", preco: "R$ 149,90", duracao: "12h" },
-  { origem: "Porto Alegre", destino: "São Paulo", preco: "R$ 199,90", duracao: "18h" },
+  { origem: "São Paulo", destino: "Rio de Janeiro", preco: "R$ 299,90", duracao: "1h" },
+  { origem: "São Paulo", destino: "Brasília", preco: "R$ 349,90", duracao: "1h40" },
+  { origem: "Rio de Janeiro", destino: "Salvador", preco: "R$ 399,90", duracao: "1h50" },
+  { origem: "Brasília", destino: "Manaus", preco: "R$ 599,90", duracao: "3h30" },
+  { origem: "Curitiba", destino: "Florianópolis", preco: "R$ 279,90", duracao: "1h" },
+  { origem: "Belo Horizonte", destino: "Recife", preco: "R$ 449,90", duracao: "2h30" },
 ] as const;
 
 export const FAQ_ITEMS = [
   {
-    question: "Como faço para reservar minha passagem?",
+    question: "Vocês vendem passagens internacionais?",
     answer:
-      "Preencha origem, destino, data e número de passageiros no formulário e clique em \"Reservar passagem\". Você será redirecionado para a página de pagamento.",
+      "Não. Trabalhamos exclusivamente com voos domésticos dentro do Brasil, conectando as principais cidades do país.",
+  },
+  {
+    question: "Como faço para reservar minha passagem aérea?",
+    answer:
+      "Informe a cidade de origem, destino, data do voo e número de passageiros. Clique em \"Reservar passagem\" e você será redirecionado para o pagamento.",
   },
   {
     question: "Quais formas de pagamento são aceitas?",
@@ -60,13 +88,8 @@ export const FAQ_ITEMS = [
       "O pagamento é feito na plataforma integrada ao botão de reserva (PIX, cartão ou boleto, conforme seu link de checkout).",
   },
   {
-    question: "Recebo comprovante após o pagamento?",
+    question: "Posso cancelar ou remarcar o voo?",
     answer:
-      "Sim. Após a confirmação do pagamento, você recebe o comprovante pelo e-mail ou canal configurado no seu gateway.",
-  },
-  {
-    question: "Posso cancelar ou remarcar a passagem?",
-    answer:
-      "As regras de cancelamento dependem da política da viação. Entre em contato pelo WhatsApp ou e-mail para solicitar alterações.",
+      "As regras dependem da companhia aérea e da tarifa escolhida. Entre em contato pelo WhatsApp ou e-mail para solicitar alterações.",
   },
 ] as const;

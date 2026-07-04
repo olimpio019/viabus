@@ -11,9 +11,9 @@ export function PopularRoutes() {
   return (
     <section id="rotas" className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
       <div className="mb-10 text-center">
-        <h2 className="text-3xl font-bold text-slate-900">Rotas populares</h2>
+        <h2 className="text-3xl font-bold text-slate-900">Voos populares no Brasil</h2>
         <p className="mt-3 text-slate-600">
-          As viagens mais buscadas pelos nossos passageiros.
+          As rotas aéreas nacionais mais buscadas pelos nossos passageiros.
         </p>
       </div>
 
@@ -23,7 +23,7 @@ export function PopularRoutes() {
             <div className="flex items-start justify-between gap-4">
               <div>
                 <p className="text-sm font-medium text-brand-600">{route.origem}</p>
-                <p className="mt-1 text-lg font-bold text-slate-900">→ {route.destino}</p>
+                <p className="mt-1 text-lg font-bold text-slate-900">✈ {route.destino}</p>
               </div>
               <span className="rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-700">
                 {route.duracao}
