@@ -1,0 +1,7 @@
+{
+  "env": {
+    "NEXT_PUBLIC_PAYMENT_URL": "https://go.fortpayplataforma.com.br/un3zc",
+    "NEXT_PUBLIC_SITE_NAME": "ViaBus",
+    "NEXT_PUBLIC_SITE_TAGLINE": "Passagens online"
+  }
+}
